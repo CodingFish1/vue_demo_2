@@ -6,7 +6,8 @@ const App = {
   data() {
     return {
       products: [],
-      selectedItem:{}
+      selectedItem:{},
+      itemCounter:"",
   }
 },
 
@@ -18,7 +19,8 @@ const App = {
 
     getProduct(){
       axios.get(`${apiUrl}/api/${path}/admin/products/all`)
-        .then((res)=>{this.products=res.data.products})
+        .then((res)=>{this.products=res.data.products;
+          this.itemCounter=Object.values(this.products).length;})
         .catch((error)=>{console.dir(error);})
     },
 

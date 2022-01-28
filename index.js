@@ -22,16 +22,16 @@ const App={
                 window.location = 'product.html';
             }).catch((error)=>{console.dir(error);})},
 
-        checkLogin(params){
-            const token= document.cookie.replace(/(?:(?:^|.*;\s*)hextoken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            console.log(token);
-            axios.defaults.headers.common['Authorization']=token;
+        // checkLogin(params){
+        //     const token= document.cookie.replace(/(?:(?:^|.*;\s*)hextoken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        //     console.log(token);
+        //     axios.defaults.headers.common['Authorization']=token;
 
-            axios.post(`${apiUrl}/api/user/check`)
-                .then((res)=>{
-                    if(res.data.success){window.location = 'product.html';}
-                }).catch((error)=>{console.dir(error);})
-        }
+        //     axios.post(`${apiUrl}/api/user/check`)
+        //         .then((res)=>{
+        //             if(res.data.success){window.location = 'product.html';}
+        //         }).catch((error)=>{console.dir(error);})
+        // }
     }
 
 }
